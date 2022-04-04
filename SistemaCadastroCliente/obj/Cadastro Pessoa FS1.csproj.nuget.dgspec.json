@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\WorkSpaceSenai\\UC12-Senai\\SA02\\EncontroRemoto_08\\Cadastro Pessoa FS1.csproj": {}
+    "D:\\WorkSpaceSenai\\UC12-FINAL\\SistemaCadastroCliente\\SistemaCadastroCliente\\Cadastro Pessoa FS1.csproj": {}
   },
   "projects": {
-    "D:\\WorkSpaceSenai\\UC12-Senai\\SA02\\EncontroRemoto_08\\Cadastro Pessoa FS1.csproj": {
+    "D:\\WorkSpaceSenai\\UC12-FINAL\\SistemaCadastroCliente\\SistemaCadastroCliente\\Cadastro Pessoa FS1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\WorkSpaceSenai\\UC12-Senai\\SA02\\EncontroRemoto_08\\Cadastro Pessoa FS1.csproj",
+        "projectUniqueName": "D:\\WorkSpaceSenai\\UC12-FINAL\\SistemaCadastroCliente\\SistemaCadastroCliente\\Cadastro Pessoa FS1.csproj",
         "projectName": "Cadastro Pessoa FS1",
-        "projectPath": "D:\\WorkSpaceSenai\\UC12-Senai\\SA02\\EncontroRemoto_08\\Cadastro Pessoa FS1.csproj",
+        "projectPath": "D:\\WorkSpaceSenai\\UC12-FINAL\\SistemaCadastroCliente\\SistemaCadastroCliente\\Cadastro Pessoa FS1.csproj",
         "packagesPath": "C:\\Users\\dodoc\\.nuget\\packages\\",
-        "outputPath": "D:\\WorkSpaceSenai\\UC12-Senai\\SA02\\EncontroRemoto_08\\obj\\",
+        "outputPath": "D:\\WorkSpaceSenai\\UC12-FINAL\\SistemaCadastroCliente\\SistemaCadastroCliente\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\dodoc\\AppData\\Roaming\\NuGet\\NuGet.Config"

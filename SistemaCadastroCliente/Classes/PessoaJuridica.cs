@@ -6,10 +6,10 @@ namespace Cadastro_Pessoa_FS1.Classes
     public class PessoaJuridica : Pessoa, IPessoaJuridica
     {
         //Atributos cnpj e razao social
-        public string ?cnpj { get; set; }
-        public string ?razaoSocial { get; set; }
+        public string? cnpj { get; set; }
+        public string? razaoSocial { get; set; }
 
-        public string caminho { get; private set;} = "Database/PessoaJuridica.csv";
+        public string caminho { get; private set; } = "Database/PessoaJuridica.csv";
 
         // Métodos
         public override float PagarImposto(float rendimento)
@@ -17,7 +17,7 @@ namespace Cadastro_Pessoa_FS1.Classes
             //throw new NotImplementedException(); para não dar erro pois aida não tem método
             if (rendimento <= 3000)
             {
-                return  rendimento * .03f;
+                return rendimento * .03f;
             }
             else if (rendimento > 3000 && rendimento <= 6000)
             {
@@ -44,47 +44,49 @@ namespace Cadastro_Pessoa_FS1.Classes
                         return true;
                     }
                 }
-                else if (cnpj.Length ==14)
+                else if (cnpj.Length == 14)
+                {
+                    if (cnpj.Substring(8, 4) == "0001")
                     {
-                       if (cnpj.Substring(8, 4) == "0001")
-                       {
-                           return true;
-                       }
+                        return true;
                     }
+                }
             }
             return false;
 
         }
 
-          public void Inserir(PessoaJuridica pj){
+        public void Inserir(PessoaJuridica pj)
+        {
 
-                VerificarPastaArquivo(caminho);
+            VerificarPastaArquivo(caminho);
 
-                string[] pjString = {$"{pj.nome}, {pj.cnpj}, {pj.razaoSocial}, {pj.endereco}, {pj.rendimento}"};
+            string[] pjString = { $"{pj.nome}, {pj.cnpj}, {pj.razaoSocial}, {pj.endereco}, {pj.rendimento}" };
 
-                File.AppendAllLines(caminho, pjString);
+            File.AppendAllLines(caminho, pjString);
+        }
+
+        public List<PessoaJuridica> Ler()
+        {
+
+            List<PessoaJuridica> listaPj = new List<PessoaJuridica>();
+
+            string[] linhas = File.ReadAllLines(caminho);
+
+            foreach (string cadaLinha in linhas)
+            {
+                string[] atributos = cadaLinha.Split(",");
+
+                PessoaJuridica cadaPj = new PessoaJuridica();
+
+                cadaPj.nome = atributos[0];
+                cadaPj.cnpj = atributos[1];
+                cadaPj.razaoSocial = atributos[2];
+
+                listaPj.Add(cadaPj);
             }
 
-            public List<PessoaJuridica> Ler(){
-
-                List<PessoaJuridica> listaPj = new List<PessoaJuridica>();
-
-                string[] linhas = File.ReadAllLines(caminho);
-
-                foreach (string cadaLinha in linhas)
-                {
-                    string[] atributos = cadaLinha.Split(",");
-
-                    PessoaJuridica cadaPj = new PessoaJuridica();
-
-                    cadaPj.nome = atributos[0];
-                    cadaPj.cnpj = atributos[1];
-                    cadaPj.razaoSocial = atributos[2];
-                    
-                    listaPj.Add(cadaPj);
-                }
-                
-                return listaPj;
-            }
+            return listaPj;
+        }
     }
 }
